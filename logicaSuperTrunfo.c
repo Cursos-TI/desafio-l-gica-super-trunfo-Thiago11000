@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
 // Desafio Super Trunfo - Países
 // Tema 2 - Comparação das Cartas
@@ -90,49 +92,80 @@ int main() {
     printf("PIB per Capita: %.2f\n", PIBPerCarpita2);
     printf("Super Poder: %.2f\n", SuperPoder2);
 
-    printf("\n*** Cidade vencedora ***\n");    
     
-          if (populacao1 > populacao2) {
+    int escolhacomparacao;
+
+    printf("\n***Escolha o Elemento de Comparação***\n");
+    printf("1.População\n");
+    printf("2.Área\n");
+    printf("3.PIB\n");
+    printf("4.Número de pontos Tuísticos\n");
+    printf("5.Densidade Populacional\n");
+    printf("6.PIB per Capita\n");
+    printf("Escolha:");
+    scanf("%d", &escolhacomparacao);
+
+
+    switch (escolhacomparacao)
+    {
+    case 1:
+        printf("\nJogador: População:\n");
+
+        if (escolhacomparacao == 1 && (populacao1 > populacao2)) {
          printf("Cidade 1 tem maior população.\n");
     } else {
          printf("Cidade 2 tem maior população.\n");
     }
+        break;
+    case 2:
+        printf("jogador: Área\n");
 
-        if (area1 > area2) {
+        if (escolhacomparacao == 2 && (area1 > area2)) {
          printf("Cidade 1 tem Área maior.\n");
     } else {
          printf("Cidade 2 tem Área maior.\n");
     }
+        break;
+    case 3:
+        printf("jogador: PIB\n");
 
-        if (PIB1 > PIB2) {
+        if (escolhacomparacao == 3 && (PIB1 > PIB2)) {
          printf("Cidade 1 tem o PIB maior.\n");
     } else {
          printf("Cidade 2 tem o PIB maior.\n");
     }
+        break;
+    case 4:
+        printf("jogador: Número de pontos Turisticos\n");
 
-        if (PIBPerCarpita1 > PIBPerCarpita2) {
-         printf("Cidade 1 tem o PIB per Capita maior.\n");
-    } else {
-         printf("Cidade 2 tem o PIB per Capita maior.\n");
-    }
-
-        if (Densidadepopulacional1 > Densidadepopulacional2) {
-         printf("Cidade 1 tem a Densidade Populacional maior.\n");
-    } else {
-         printf("Cidade 2 tem a Densidade Populacional maior.\n");
-    }
-
-        if (Numerodepontosturisticos1 < Numerodepontosturisticos2) {
+        if (escolhacomparacao == 5 && (Numerodepontosturisticos1 > Numerodepontosturisticos2)) {
          printf("Cidade 1 tem mais Pontos Turisticos maior.\n");
     } else {
          printf("Cidade 2 tem mais pontos Turisticos maior.\n");
     }
+        break;   
+    case 5:
+        printf("jogador: Densidade Populacional\n");
 
-        if (SuperPoder1 > SuperPoder2) {
-         printf("Cidade 1 tem o maior Super Poder.\n");
+        if (escolhacomparacao == 5 && (Densidadepopulacional1 < Densidadepopulacional2)) {
+         printf("Cidade 1 tem a Densidade Populacional menor.\n");
     } else {
-         printf("Cidade 2 tem a Densidade Populacional maior.\n");
+         printf("Cidade 2 tem a Densidade Populacional menor.\n");
     }
+        break;
+    case 6:
+        printf("jogador: PIB Per Capita\n");
 
+        if (escolhacomparacao == 6 && (PIBPerCarpita1 > PIBPerCarpita2)) {
+         printf("Cidade 1 tem o maior PIB per Carpita.\n");
+    } else {
+         printf("Cidade 2 tem a PIB per Carpita maior.\n");
+    }
+        break;
+    default:
+        printf("Opção inválida\n");
+        break;            
+    }    
     return 0;
 }
+
